@@ -5,10 +5,7 @@ do
     esac
 done
 
-cd ../expo-updates-client
-npx expo export
-cd ../expo-updates-server
 rm -rf updates/$directory/
-cp -r ../expo-updates-client/dist/ updates/$directory
+cp -r ./last-update/dist/ updates/$directory
 
 node ./scripts/exportClientExpoConfig.js > updates/$directory/expoConfig.json
